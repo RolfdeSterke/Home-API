@@ -4,7 +4,7 @@ from flask_cors import CORS
 from controllers.TodoResource import TodoResource, TodosResource, HiddenResource
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://dev:secret@127.0.0.1:3306/home_api'  # 'mysql://username:password@ip:port/databasename'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:secret@127.0.0.1:3306/home_api'  # 'mysql://username:password@ip:port/databasename'
 app.config['HOMELYNK_URI'] = 'http://remote:Selficient@10.1.1.10/scada-remote/request.cgi?m=json&r=grp&fn=write&'
 CORS(app)
 api = Api(app)

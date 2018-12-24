@@ -45,6 +45,11 @@ class TodoModel(db.Model):
         return todo
 
     @classmethod
+    def find_hidden(cls):
+        todo = cls.query.filter_by(is_hidden=1).all()
+        return todo
+
+    @classmethod
     def find_all_non_hidden(cls):
         todo = cls.query.filter_by(is_hidden=0).all()
         return todo

@@ -6,7 +6,7 @@ import json
 class HiddenResource(Resource):
 
     def get(self):
-        all_todos = TodoModel.find_all()
+        all_todos = TodoModel.find_hidden()
         all_in_json = [todo.to_json() for todo in all_todos]
         return {"todos": all_in_json}, 200
 
